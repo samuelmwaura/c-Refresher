@@ -7,4 +7,13 @@ public enum shippingWays
     registeredAirMail = 2,
     express = 3
 }
+
+
+public enum seasonsOfTheYear
+{
+    autumn,
+    spring,
+    summer,
+    winter
+}
 }

@@ -1,59 +1,71 @@
-﻿
-namespace fundamentals;
 
-public enum ShippingWays
+namespace fundamentals
 {
-    airmail = 1,
-    registereAirMail= 2,
-    express = 3
-}
-class Program
-{
-    static void Main(string[] args)
+    public class Program
     {
-        //Arrays
-        Console.WriteLine("This is for the Lord!");
-        int[] numbers = new int[3] { 89, 276,47,}; // can get rid of int[] and use var and compile knows
-        Console.WriteLine(numbers[2]); // WriteLine is a static method defined in Console
+        public static void Main(String[] args)  //change entry point by renaming
+        {
+            //validate input
+            Console.WriteLine("Enter a number.");
+            int enteredNumber = int.Parse(Console.ReadLine());
 
-        numbers[2]=  684;
-        Console.WriteLine(numbers[2]);
+            if(enteredNumber >10)
+            {
+                Console.WriteLine("Valid");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
 
-        //STRING
-        //string is a c# keyword that maps to String Class hence has many methods that are static 
-        //var can be used for the variable type
-        string firstName = "Grenden fill";
-        string secondName = "yusufu";
-        string fullNames = "My name is " + secondName + " " + firstName;// string by concatenation
-        Console.WriteLine(fullNames); // WriteLine accessed directly from the class it is defined.
+             //display maximum of two entered numbers
+            Console.WriteLine("Enter the First Number:");
+            int firstNumber = int.Parse(Console.ReadLine());
 
-        string fullNames2 = string.Format("My fullName2 is {0} {1}",firstName,secondName);//string by formatting.format static method
-        Console.WriteLine(fullNames2);
+            Console.WriteLine("Enter the Second Number:");
+            int secondNumber = int.Parse(Console.ReadLine());
 
-        string fullNames3 = string.Join(" ",numbers);// string by joining.Join is a static method
-        Console.WriteLine(fullNames3);//no instance of a class is needed
+            int greaterNumber = firstNumber > secondNumber ?firstNumber :secondNumber; // conditional operator
+            Console.WriteLine(greaterNumber);
 
-        string path = "Dotnet is located in \n C:\\folder1\\folder2"; //format using verbatim strings to be readable
-        String path2 = @"Dotnet is located in 
-        C:\\folder1\\folder2";
-        Console.WriteLine(path, path2);
+            //Tell the image orientation
 
-        //enums
-        var mailingMethod = shippingWays.registeredAirMail;
-        Console.WriteLine((int)mailingMethod); //outputting the mailing method's respective integer value
+            Console.WriteLine("Enter the width of the image:");
+            int width  = int.Parse(Console.ReadLine());
 
-        int receivedMethodIdentifier = 1;
-        Console.WriteLine((shippingWays)receivedMethodIdentifier); //change a received integer to the respective shipping way defined in the our app.We cast the received number into the enum
+            Console.WriteLine("Enter the height of your image");
+            int height  = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(shippingWays.express.ToString());//Method calls toStrings everytime,no need to call tostrings
+            string orientation = width > height ? "landScape": "portrait";
+            Console.WriteLine("The orientation of the image is " + orientation);
 
-        string receivedStringMethod = "airMail";
-        var parsedReceivedStringMethod = (shippingWays)Enum.Parse(typeof(shippingWays),receivedStringMethod);//
-        //first  parse the string to the type of the specified enum then cast the resultant object using the specified enum
-        //parse -  change a string to another type
-        Console.WriteLine(parsedReceivedStringMethod);
+            //Speed limit program
+            Console.WriteLine("Enter the specified speed limit:");
+            int speedLimit = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the Current Vehicle speed:");
+            int vehicleSpeed = int.Parse(Console.ReadLine());
+
+            if (vehicleSpeed < speedLimit)
+            {
+                Console.WriteLine("Ok"); 
+            }
+            else if (vehicleSpeed > speedLimit)
+            {
+                int demeritPoints = (vehicleSpeed - speedLimit) / 5;
+                if (demeritPoints > 12)
+                {
+                    Console.WriteLine("License Suspended");
+                }
+                else
+                {
+                    Console.WriteLine(demeritPoints);               
+                }
+
+            }
 
 
-
+        }
+        
     }
 }
