@@ -3,9 +3,7 @@ namespace fundamentals
     public class MyEnums
     {
         public void myEnums()
-        {
-            
-
+        {                                                                                             
         //ENUMS
         var mailingMethod = shippingWays.registeredAirMail;
         Console.WriteLine((int)mailingMethod); //outputting the mailing method's respective integer value

@@ -5,7 +5,7 @@ namespace fundamentals.exercises
         public void validateNumber()
         {
             Console.WriteLine("Enter a number between 1 and 10.");
-            int enteredNumber =int.Parse(Console.ReadLine());
+            int enteredNumber =Convert.ToInt32(Console.ReadLine());
 
             if(enteredNumber >10)
             {
@@ -21,22 +21,22 @@ namespace fundamentals.exercises
         public void displayMaximum()
         {
             Console.WriteLine("Enter the First Number:");
-            int firstNumber = int.Parse(Console.ReadLine());
+            int firstNumber = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter the Second Number:");
-            int secondNumber = int.Parse(Console.ReadLine());
+            int secondNumber = Convert.ToInt32(Console.ReadLine());
 
-            int greaterNumber = firstNumber > secondNumber ?firstNumber :secondNumber; // conditional operator
+            int greaterNumber = firstNumber > secondNumber ? firstNumber :secondNumber; // conditional operator
             Console.WriteLine(greaterNumber);
         }
 
         public void tellImageOrientation()
         {
             Console.WriteLine("Enter the width of the image:");
-            int width  = int.Parse(Console.ReadLine());
+            int width  = Convert.ToInt32(Console.ReadLine()); // int.parse() Gives a possible null reference warning and thows an error incase of null hence not preferred
 
             Console.WriteLine("Enter the height of your image");
-            int height  = int.Parse(Console.ReadLine());
+            int height  = Convert.ToInt32(Console.ReadLine());
 
             string orientation = width > height ? "landScape": "portrait";
             Console.WriteLine("The orientation of the image is " + orientation);
@@ -46,10 +46,10 @@ namespace fundamentals.exercises
         public void speedLimitApp()
         {
             Console.WriteLine("Enter the specified speed limit:");
-            int speedLimit = int.Parse(Console.ReadLine());
+            int speedLimit = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter the Current Vehicle speed:");
-            int vehicleSpeed = int.Parse(Console.ReadLine());
+            int vehicleSpeed = Convert.ToInt32(Console.ReadLine());
 
             if (vehicleSpeed < speedLimit)
             {
