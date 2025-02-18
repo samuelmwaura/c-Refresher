@@ -16,4 +16,10 @@ public enum seasonsOfTheYear
     summer,
     winter
 }
+
+public enum ImageOrientations
+{
+    landscape,
+    portrait
+}
 }

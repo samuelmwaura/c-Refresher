@@ -5,9 +5,9 @@ namespace fundamentals.exercises
         public void validateNumber()
         {
             Console.WriteLine("Enter a number between 1 and 10.");
-            int enteredNumber =int.Parse(Console.ReadLine());
+            var enteredNumber =Convert.ToInt32(Console.ReadLine());
 
-            if(enteredNumber >10)
+            if(enteredNumber >1 && enteredNumber <= 10)
             {
                 Console.WriteLine("Valid");
             }
@@ -38,7 +38,7 @@ namespace fundamentals.exercises
             Console.WriteLine("Enter the height of your image");
             int height  = int.Parse(Console.ReadLine());
 
-            string orientation = width > height ? "landScape": "portrait";
+            var orientation = width > height ? ImageOrientations.landscape: ImageOrientations.portrait;
             Console.WriteLine("The orientation of the image is " + orientation);
 
         }
@@ -67,6 +67,10 @@ namespace fundamentals.exercises
                     Console.WriteLine(demeritPoints);               
                 }
 
+            }
+            else
+            {
+                Console.WriteLine("You are lucky!");
             }
 
         }
