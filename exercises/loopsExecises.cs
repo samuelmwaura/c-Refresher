@@ -79,7 +79,7 @@ public class loopExercises
         Console.WriteLine("Enter a Series of Numbers Separated by Commas:");
         var input = Console.ReadLine();
 
-        input.Split()
+        input.Split(); 
 
 
     }
