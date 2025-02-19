@@ -9,7 +9,7 @@ namespace fundamentals
         var currentSeason = seasonsOfTheYear.summer;// can just use var instead of casting
 
         if(promoEligible){
-            Console.WriteLine("customer Qualitfies");
+            Console.WriteLine("customer Qualifies");
         }
         else
         {
