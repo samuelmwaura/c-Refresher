@@ -1,5 +1,4 @@
 ﻿using fundamentals.exercises;
-using fundamentals.objectOriented;
 namespace fundamentals;
 
 class Program
@@ -36,10 +35,5 @@ class Program
         // var njeru = new Person("Erastus","Mbau","Ngure"); // initialization using a constructor
         // Console.WriteLine("These are the names of the Person in question: {0} {1} {2}",njeru.firstName,njeru.middleName,njeru.lastName);
 
-        var newPoint = new Point(80,60);
-        newPoint.move(40, 50);
-        newPoint.move(new Point(80,70));
-        Console.WriteLine("These are the new points:{0} {1}",newPoint.x, newPoint.y);
-        
     }
 }
