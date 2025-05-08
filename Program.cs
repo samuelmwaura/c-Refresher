@@ -35,5 +35,8 @@ class Program
         // var njeru = new Person("Erastus","Mbau","Ngure"); // initialization using a constructor
         // Console.WriteLine("These are the names of the Person in question: {0} {1} {2}",njeru.firstName,njeru.middleName,njeru.lastName);
 
+        var longSentence = "dfbuudihd heiodjs oaijsojd woijdopj kdpoask dpoasd cmaknc ajdnuw eiudh weiodj owedj paodjad";
+        Console.WriteLine(StringUtility.SummarizeSentence(longSentence, 28));
+
     }
 }
