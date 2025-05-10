@@ -1,6 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
 using fundamentals.exercises;
 using System;
+using fundnamentals;
+using System.Text;
+using System.Globalization;
 namespace fundamentals;
 
 class Program
@@ -66,7 +69,39 @@ class Program
          Console.WriteLine("This is how to add to timespan: {0}",timespan.Add(new TimeSpan(4,5,8))); // add method takes a timespan
          Console.WriteLine("This is a timespan to a string:{0}",timespan.ToString());
          Console.WriteLine("This is a timespan from a string:{0}", TimeSpan.Parse("7:56:57"));
-         
+
+         //WORKING WITH STRINGS
+         var myTestSentence = "  This is the sentence that I will be using to write and to test strings sentence.  ";
+         Console.WriteLine("This is the value of the string Trimmed:{0}:",myTestSentence.Trim());
+         Console.WriteLine("This is the index of the word 'Sentence': {0}",myTestSentence.IndexOf("sentence"));
+         Console.WriteLine("This is is the index of the last 'sentence' word: {0}",myTestSentence.LastIndexOf("sentence"));
+         Console.WriteLine("This is a substring from the first word 'Sentence':{0}",myTestSentence.Substring(myTestSentence.IndexOf("sentence")));
+
+         foreach(var word in myTestSentence.Split()) // Split gives a string array of words
+         {
+            Console.WriteLine(word);
+
+         }
+
+         Console.WriteLine("Replacing 'Sentence' with 'Clause':{0}",myTestSentence.Replace("sentence","clause")); // .replace returns a new string with the changed values.
+         System.Console.WriteLine("My strung is null or empty: {0}", String.IsNullOrEmpty(myTestSentence));
+         System.Console.WriteLine("My strung is null or Whitespace: {0}", String.IsNullOrEmpty(myTestSentence));
+
+         //Converting Strings
+         var stringNumber = "678893";
+         var number = 3457;
+
+         Console.WriteLine("This is my number from string:{0}",Convert.ToInt32(stringNumber));
+         Console.WriteLine("This is my String from number:{0}",number.ToString("C")); // Converts to currency format
+
+         //using stringbuilder class - A class to create mutable strings but not optimized for searching
+         var stringBuilderExample = new StringBuilder();
+         Console.WriteLine(stringBuilderExample.Append('k',12));
+         System.Console.WriteLine(stringBuilderExample.Replace("k","o"));
+         System.Console.WriteLine(stringBuilderExample.Remove(0, 5)); //removes from index 0  5 elements
+         System.Console.WriteLine(stringBuilderExample.Insert(0,new  String(" ENTER THIS NEW ")));
+
+
 
     }
 }
